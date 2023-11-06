@@ -1,9 +1,35 @@
+import java.io.BufferedReader;
 import java.util.Scanner;
 
 public class JavaDataTypes {
     public static void main(String[] args) {
         // First we instantiate our Scanner Object to take in and evaluate our input:
         Scanner scanner = new Scanner(System.in);
+
+        // Then, we check for the first integer given to us by the input, to determine what our int 't' is:
+        int t = scanner.nextInt();
+
+        // Create our loop, based on the amount of iterations given to us by the input:
+        for (int i = 0; i < t; i++) {
+
+            // Then we create our try-catch to validate our output to the correct format:
+            try {
+                long n = scanner.nextLong();
+                System.out.println(n + " can be fitted in:");
+                if (n >= -128 && n <= 127) {
+                    System.out.println("* byte");
+                }
+                if (n >= -32768 && n <= 32767) {
+                    System.out.println("* short");
+                }
+                if (n >= -2147483648 && n <= 2147483647) {
+                    System.out.println("* int");
+                }
+                System.out.println("* long");
+            } catch(Exception e) {
+                System.out.println(scanner.next() + " can't be fitted anywhere.");
+            }
+        }
     }
 }
 
