@@ -12,7 +12,7 @@ public class JavaSubstringComparisons {
 
         List<String> ourSubstrings = new ArrayList<>();
 
-        for (int i = 0; i < s.length() - k; i += k) {
+        for (int i = 0; i < s.length() - k; i += 1) {
             String parsedString = s.substring(i , i + k);
             ourSubstrings.add(parsedString);
         }
