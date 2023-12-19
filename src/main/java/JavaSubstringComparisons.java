@@ -5,29 +5,28 @@ import java.util.Scanner;
 public class JavaSubstringComparisons {
     public static void main(String[] args) {
 
+        //First, we instantiate our scanner to read our input:
         Scanner scanner = new Scanner(System.in);
 
+        // Next, we'll set some initial values to prepare our algorithm. Important things to note here is k, which is what determines our substring length, as well as our smallest and largest substrings here, which are our solutions:
         String s = scanner.nextLine();
         int k = scanner.nextInt();
-        String solution = "";
+        String currentSubstring = s.substring(0, k);
+        String smallestString = currentSubstring;
+        String largestString = currentSubstring;
 
-        List<String> ourSubstrings = new ArrayList<>();
-
-        for ( int i = 0; i < s.length() - (k - 1); i ++ ) {
-            String parsedString = s.substring(i , i + k);
-            ourSubstrings.add( parsedString );
-        }
-
-        System.out.println("substrings --->" + ourSubstrings);
-
-        for(int i = 0; i < ourSubstrings.size() - 1; i++) {
-            int compareValue = ourSubstrings.get(i).compareTo(ourSubstrings.get(i + 1));
-            if(compareValue < 0) {
-                solution = ourSubstrings.get(i);
+        // Now let's loop through our input 's' and set our smallest or largest depending on the lex values we get, denoted by positive or negative ints:
+        for(int i = 1; i <= s.length() - k; i++) {
+            currentSubstring = s.substring(i, i + k);
+            if(currentSubstring.compareTo(largestString) > 0) {
+                largestString = currentSubstring;
+            } else if(currentSubstring.compareTo(smallestString) < 0) {
+                smallestString = currentSubstring;
             }
         }
 
-        System.out.println(solution);
-
+        // Finally, we'll close our scanner and present our solution:
+        scanner.close();
+        System.out.println(smallestString + "\n" + largestString);
     }
 }
