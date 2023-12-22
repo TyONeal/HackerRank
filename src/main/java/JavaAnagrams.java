@@ -7,6 +7,9 @@ public class JavaAnagrams {
         char[]bArray = b.toCharArray();
 
         for (int i = 0; i < a.length() - 1; i++) {
+            if(b.contains() {
+                frequency++;
+            }
         }
         return true;
     }
