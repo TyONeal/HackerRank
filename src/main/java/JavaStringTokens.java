@@ -4,16 +4,24 @@ import java.util.Scanner;
 public class JavaStringTokens {
 
     public static String[] getTokens(String input) {
-        return input.split("[' ?!.]");
+        return input.split("['\\]\\[\\s@?!\".]");
     }
 
-    public static long getTokenCount(String[]tokens) {
-        return Arrays.stream(tokens).count();
+    public static int getTokenCount(String[]tokens) {
+        int count = 0;
+        for (int i = 0; i < Arrays.stream(tokens).count(); i++) {
+            if(!tokens[i].equals("")) {
+                count++;
+            }
+        }
+        return count;
     }
 
     public static void displayTokens(String[]tokens) {
         for(int i = 0; i < Arrays.stream(tokens).count(); i++) {
-            System.out.println(tokens[i].replace(",", "").trim());
+            if(!tokens[i].equals("")) {
+                System.out.println(tokens[i].replace(",", ""));
+            }
         }
     }
 
