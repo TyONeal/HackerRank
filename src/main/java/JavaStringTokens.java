@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class JavaStringTokens {
 
     public static String[] getTokens(String input) {
-        return input.split("['\\]\\[\\s@?!\".]");
+        return input.split("[^a-zA-Z]");
     }
 
     public static int getTokenCount(String[]tokens) {
