@@ -15,6 +15,14 @@ public class JavaPatternSyntaxChecker {
     }
 
     public static void main(String[] args) {
-
+        Scanner scanner = new Scanner(System.in);
+        int inputCount = scanner.nextInt();
+        for(int i = 0; i < inputCount; i++) {
+            if(checkCompile(scanner.next())) {
+                System.out.println("Valid");
+            } else {
+                System.out.println("Invalid");
+            }
+        }
     }
 }
