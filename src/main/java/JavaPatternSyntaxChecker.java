@@ -14,6 +14,10 @@ public class JavaPatternSyntaxChecker {
         return true;
     }
 
+    public static void check() {
+
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int inputCount = scanner.nextInt();
