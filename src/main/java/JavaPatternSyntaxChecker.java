@@ -14,7 +14,7 @@ public class JavaPatternSyntaxChecker {
         }
     }
 
-    // Our main method will use our checkCompile method to loop through our lines of input. It's very important to move to the next line after getting our first int:
+    // Our main method will use our checkCompile method to loop through our lines of input. It's very important to move to the next line after getting our first int. Make sure you close your scanner at the end:
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int inputCount = scanner.nextInt();
@@ -22,5 +22,6 @@ public class JavaPatternSyntaxChecker {
         for(int i = 0; i < inputCount; i++) {
             checkCompile(scanner.nextLine());
         }
+        scanner.close();
     }
 }
