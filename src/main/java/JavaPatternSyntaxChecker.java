@@ -4,32 +4,23 @@ import java.util.regex.PatternSyntaxException;
 
 public class JavaPatternSyntaxChecker {
 
-    public static boolean checkCompile(String s) {
+    // Here, we'll only need two methods to get our answer. Our first method will attempt a try-catch, and print out our appropriate output:
+    public static void checkCompile(String s) {
         try {
             Pattern.compile(s);
+            System.out.println("Valid");
         } catch (PatternSyntaxException e) {
-            e.getStackTrace();
-            return false;
+            System.out.println("Invalid");
         }
-        return true;
     }
 
-    public static void check() {
-
-    }
-
+    // Our main method will use our checkCompile method to loop through our lines of input. It's very important to move to the next line after getting our first int:
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int inputCount = scanner.nextInt();
-        if(scanner.next().equals("[ ]*")) {
-            System.out.println("Valid");
-        }
+        scanner.nextLine();
         for(int i = 0; i < inputCount; i++) {
-            if(checkCompile(scanner.next())) {
-                System.out.println("Valid");
-            } else {
-                System.out.println("Invalid");
-            }
+            checkCompile(scanner.nextLine());
         }
     }
 }
