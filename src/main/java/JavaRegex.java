@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 public class JavaRegex {
 
     // First, we establish our regex by creating our custom string:
-    private static final String ipRegex = "^((25[0-5]|(2[0-4]|1\\\\d|[1-9]|)\\\\d)\\\\.?\\\\b){4}$";
+    private static final String ipRegex = "^((25[0-5]|(2[0-4]|1\\d|[1-9]|)\\d)\\.?\\b){4}$";
 
     // Next, we instantiate our pattern to compile our regex for comparison:
     private static final Pattern pattern = Pattern.compile(ipRegex);
