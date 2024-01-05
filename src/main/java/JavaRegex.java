@@ -25,6 +25,7 @@ public class JavaRegex {
         Scanner scanner = new Scanner(System.in);
         if(scanner.hasNextLine()) {
             checkRegex(scanner.nextLine());
+
         }
     }
 }
